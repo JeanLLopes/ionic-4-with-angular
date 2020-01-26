@@ -21,15 +21,21 @@
 
 ## Add platforms
 `ionic cordova platform add ios`
+
 `ionic cordova platform add android`
+
 `ionic cordova platform add browser`
+
 
 <br />
 
 ## To emulate your project
 `ionic cordova emulate --platform`
+
 `ionic cordova emulate android`
+
 `ionic cordova emulate ios`
+
 `ionic cordova emulate browser`
 
 <br />
