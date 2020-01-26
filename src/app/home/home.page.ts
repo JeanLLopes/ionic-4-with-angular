@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActionSheetController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,29 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(public actionSheetController: ActionSheetController) { }
+
+  async presentActionSheet() {
+    const actionSheet = await this.actionSheetController.create({
+      header: 'Test Action Sheet',
+      buttons: [{
+        text: 'Cancel',
+        icon: 'close',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      },
+      {
+        text: 'Delete',
+        role: 'destructive',
+        icon: 'trash',
+        handler: () => {
+          console.log('Delete clicked');
+        }
+      }]
+    });
+    await actionSheet.present();
+  }
 
 }
